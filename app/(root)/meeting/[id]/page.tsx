@@ -1,4 +1,5 @@
 'use client'
+import Alert from '@/components/modals/alert';
 import MeetingRoom from '@/components/page-components/meetingRoom';
 import MeetingSetup from '@/components/page-components/meetingSetup';
 import VideoCallLoader from '@/components/ui/loader';
@@ -13,7 +14,7 @@ const MeetingPage = () => {
 
   const [isSetupComplete, setIsSetupComplete] = useState(false)
   const { call, isCallLoading } = useGetCallById(id);
-  const {user,isLoaded} = useUser();
+  const {user,isLoaded} = useUser(); 
 
   if (!isLoaded || isCallLoading) return <VideoCallLoader />;
 
@@ -23,7 +24,10 @@ const MeetingPage = () => {
     </p>
   );
 
+  // get more info about custom call type:  https://getstream.io/video/docs/react/guides/configuring-call-types/
+  const notAllowed = call.type === 'invited' && (!user || !call.state.members.find((m) => m.user.id === user.id));
 
+  if (notAllowed) return <Alert title="You are not allowed to join this meeting" />;
 
 
   return (

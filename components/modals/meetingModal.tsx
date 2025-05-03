@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
+// import { LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 
 interface MeetingModalProps {
@@ -20,7 +20,8 @@ interface MeetingModalProps {
   handleClick?: () => void;
   children?: ReactNode;
   image?: string;
-  buttonIcon?: ReactNode | LucideIcon;
+  // buttonIcon?: ReactNode | LucideIcon;
+  buttonIcon?: ReactNode;
   description?: string;
   variant?: 'default' | 'success' | 'destructive';
 }
@@ -106,7 +107,7 @@ const MeetingModal = ({
               {buttonIcon && (
                 <span className="mr-2">
                   {React.isValidElement(buttonIcon) 
-                    ? React.cloneElement(buttonIcon, { className: "h-4 w-4" })
+                    ? React.cloneElement(buttonIcon)
                     : buttonIcon}
                 </span>
               )}
