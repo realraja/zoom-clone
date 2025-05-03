@@ -155,11 +155,6 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
               ? 'Recordings will appear here after your meetings end'
               : 'Your completed meetings will appear here'}
           </p>
-          {type === 'upcoming' && (
-            <Button onClick={() => router.push('/schedule')}>
-              Schedule Meeting
-            </Button>
-          )}
         </div>
       )}
     </div>
