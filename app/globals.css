@@ -171,12 +171,13 @@ body::-webkit-scrollbar-thumb {
 
 
 
-/* .cl-internal-1dauvpw{
+.cl-internal-1dauvpw{
   display: none;
 }
 .cl-internal-1hp5nqm{
   display: none;
-} */
+}
+ 
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.98); }
