@@ -105,7 +105,7 @@ const PersonalRoom = () => {
             <Button
               onClick={startRoom}
               size="lg"
-              className="flex-1 gap-2 bg-primary hover:bg-primary/90"
+              className="flex-1 gap-2 bg-primary hover:bg-primary/90 py-4"
             >
               <Video className="h-5 w-5" />
               Start Meeting
@@ -114,7 +114,7 @@ const PersonalRoom = () => {
               onClick={copyToClipboard}
               size="lg"
               variant="secondary"
-              className="flex-1 gap-2"
+              className="flex-1 gap-2 py-4"
             >
               <Copy className="h-5 w-5" />
               Copy Invite
